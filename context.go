@@ -705,7 +705,7 @@ func (dc *Context) LoadFontFace(path string, points float64) error {
 
 func (dc *Context) LoadFontFromBytes(data []byte, points float64) error {
 	face, err := LoadFontFaceFromBytes(data, points)
-	if err != nil {
+	if err == nil {
 		dc.fontFace = face
 		dc.fontHeight = points * 72 / 96
 	}
